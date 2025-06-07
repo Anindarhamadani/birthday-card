@@ -17,6 +17,7 @@
       background-position: center;
     }
   </style>
+ 
 </head>
 <body class="flex justify-center items-center min-h-screen p-4">
   <div class="bg-white border-4 border-[#8B4513] shadow-lg shadow-[#D2B48C] rounded-xl text-center animate__animated animate__backInDown w-full max-w-md sm:max-w-lg md:max-w-xl p-6 sm:p-8" id="kartu">
@@ -63,5 +64,19 @@
       location.reload();
     }
   </script>
+  
+  <audio autoplay loop hidden muted id="bgAudio">
+  <source src="tulus.mp3" type="audio/mpeg" />
+</audio>
+<script>
+  window.addEventListener("DOMContentLoaded", function () {
+    const audio = document.getElementById("bgAudio");
+    audio.muted = false;
+    audio.play().catch((e) => {
+      console.warn("Autoplay mungkin diblokir:", e);
+    });
+  });
+</script>
+
 </body>
 </html>
